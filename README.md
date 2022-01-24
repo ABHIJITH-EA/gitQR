@@ -1,5 +1,5 @@
 # gitQR
 Generate a QR code for your GitHub profile
 
-INSTALL
-``` pip install -r requirements.txt ```
+Install<br>
+[``` pip install -r requirements.txt ```](url)
