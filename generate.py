@@ -6,6 +6,10 @@ import requests
 
 
 def check_internet_status():
+    """ 
+        Checks the system is connected to internet or not
+    """
+    
     try:
         socket.create_connection(("1.1.1.1", 53))
         return True
@@ -13,6 +17,10 @@ def check_internet_status():
         return False
 
 def check_user_existence(username):
+    """ 
+        Checks the user name provided is valid github user
+        :param username: github username
+    """
     url = f"https://api.github.com/users/{username}"
     
     response = requests.get(url).status_code
@@ -20,6 +28,9 @@ def check_user_existence(username):
     return response
 
 def generate(username):
+    """ 
+        Generate the QR code for the given username and save it in the QR codes folder
+    """
     output_dir = "QR codes"
     destination = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_dir)
 
